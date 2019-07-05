@@ -17,9 +17,13 @@ public class Main {
             System.exit(0);
         }
         int n1 = sc.nextInt();
-        sc.nextLine();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+       // sc.nextLine();
         String s = sc.nextLine();
         System.out.println(n1);
+        System.out.println(n2);
+        System.out.println(n3);
         System.out.println(s);
         sc.close();
     }

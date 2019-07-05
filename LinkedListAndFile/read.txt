@@ -1,0 +1,2 @@
+In IDEA you can type sout and press Tab to generate System.out.println automatically.
+int[] nums = new int[100];
