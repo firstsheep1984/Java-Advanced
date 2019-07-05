@@ -4,6 +4,7 @@ public class LinkedList1 {
     private Node1 head;
 
     public LinkedList1() {
+        head = null;
     }
 
     public LinkedList1(Node1 head) {
@@ -24,19 +25,21 @@ public class LinkedList1 {
 
     public int size(){
         int counter = 0;
-        while(head != null){
-            head = head.getLink();
+        Node1 position = head;
+        while(position != null){
+            position = position.getLink();
             counter++;
         }
         return counter;
     }
 
     public boolean contains(String target){
-        while(head != null){
-            if(head.getName().equals(target)){
+        Node1 position = head;
+        while(position != null){
+            if(position.getName().equals(target)){
                 return true;
             }else{
-                head.getLink();
+                position.getLink();
             }
         }
        return false;
@@ -44,20 +47,23 @@ public class LinkedList1 {
 
     public Node1 find(String target){
         String itemAtposition;
-      while  (head != null){
-          itemAtposition = head.getName();
+        Node1 position = head;
+      while  (position != null){
+          itemAtposition = position.getName();
           if(itemAtposition.equals(target)){
-              return head;
+              return position;
           }
-          head = head.getLink();
+          position = position.getLink();
       }
       return null;
     }
 
     public void outputList(){
-        while(head != null){
-            System.out.println(head.toString());
-            head.getLink();
+        Node1 position = head;
+        while(position != null)
+        {
+            System.out.println(position.getName());
+            position = position.getLink();
         }
     }
     public boolean isEmpty(){
