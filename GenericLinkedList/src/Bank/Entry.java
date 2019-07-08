@@ -1,5 +1,7 @@
 package Bank;
 
+import java.util.Objects;
+
 public class Entry {
     private String name;
     private int count;
@@ -31,5 +33,14 @@ public class Entry {
                 "name='" + name + '\'' +
                 ", count=" + count +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Entry entry = (Entry) o;
+        return count == entry.count &&
+                Objects.equals(name, entry.name);
     }
 }
