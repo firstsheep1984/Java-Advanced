@@ -9,6 +9,7 @@ public class HashTableDemo
 		h.put("cat");
 		h.put("turtle");
 		h.put("bird");
+		System.out.println("Dog in hash table? ");
 		System.out.println("Dog in hash table? " + h.containsString("dog"));
 		System.out.println("Cat in hash table? " + h.containsString("cat"));
 		System.out.println("Turtle in hash table? " + h.containsString("turtle"));

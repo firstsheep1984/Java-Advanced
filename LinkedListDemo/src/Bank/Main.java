@@ -8,7 +8,7 @@ public class Main {
         linkedList1.addToStart("apple");
         linkedList1.addToStart("pear");
         linkedList1.addToStart("banana");
-        linkedList1.addToStart("banana");
+       // linkedList1.addToStart("banana");
 
         System.out.println("This list has " + linkedList1.size() + " items. the items are ");
         linkedList1.outputList();

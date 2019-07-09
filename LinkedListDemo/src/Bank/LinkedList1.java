@@ -34,17 +34,22 @@ public class LinkedList1 {
     }
 
     public boolean contains(String target){
+        String itemAtposition;
         Node1 position = head;
-        while(position != null){
-            if(position.getName().equals(target)){
+        while  (position != null){
+            itemAtposition = position.getName();
+            if(itemAtposition.equals(target)){
                 return true;
-            }else{
-                position.getLink();
             }
+            position = position.getLink();
         }
-       return false;
+        return false;
     }
 
+   /* public boolean contains(String item)
+    {
+        return (find(item) != null);
+    }*/
     public Node1 find(String target){
         String itemAtposition;
         Node1 position = head;
