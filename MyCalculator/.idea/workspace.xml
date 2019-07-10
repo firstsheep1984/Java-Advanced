@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61c1e5ac-2e3b-4c0b-9889-f54a5002a45a" name="Default Changelist" comment="" />
+    <list default="true" id="3f344a4b-d856-42cb-b449-eb77f5f81f39" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +16,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Bank/GridLayoutFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/Bank/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="21" column="49" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="344">
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5178#5179#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,8 +35,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Bank/Main.java" />
-        <option value="$PROJECT_DIR$/src/Bank/GridLayoutFrame.java" />
+        <option value="$PROJECT_DIR$/src/Bank/Calculator.java" />
       </list>
     </option>
   </component>
@@ -53,22 +52,21 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="GridLayoutFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GridLayoutFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="MyCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyCalculator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GridLayoutFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GridLayoutFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="MyCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyCalculator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GridLayoutFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GridLayoutFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="MyCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyCalculator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Bank" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -76,6 +74,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -97,8 +96,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Bank.GridLayoutFrame" />
-      <module name="GridLayoutFrame" />
+      <option name="MAIN_CLASS_NAME" value="Bank.Calculator" />
+      <module name="MyCalculator" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -117,20 +116,21 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="61c1e5ac-2e3b-4c0b-9889-f54a5002a45a" name="Default Changelist" comment="" />
-      <created>1562774313277</created>
+      <changelist id="3f344a4b-d856-42cb-b449-eb77f5f81f39" name="Default Changelist" comment="" />
+      <created>1562780881831</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1562774313277</updated>
-      <workItem from="1562774316359" duration="1646000" />
+      <updated>1562780881831</updated>
+      <workItem from="1562780884897" duration="2019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1646000" />
+    <option name="totallyTimeSpent" value="2019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="379" y="14" width="1539" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -139,7 +139,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494929" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.3298731" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
@@ -167,12 +167,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Bank/GridLayoutFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/Bank/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="49" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="344">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5178#5179#0" expanded="true" />
           </folding>
         </state>
       </provider>
