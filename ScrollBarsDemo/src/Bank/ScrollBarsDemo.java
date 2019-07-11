@@ -46,7 +46,7 @@ public class ScrollBarsDemo extends JFrame implements ActionListener {
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setLayout(new BorderLayout());
+       // setLayout(new BorderLayout());
 
         JPanel textPanel = new JPanel();
         message = new JTextArea(LINES, CHAR_PER_LINE);
