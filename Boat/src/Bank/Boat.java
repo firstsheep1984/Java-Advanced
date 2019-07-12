@@ -19,6 +19,7 @@ public class Boat extends JFrame implements ActionListener {
     private Color sailColor = Color.blue;
     private Color boatColor = Color.black;
     private float fAmount = (float) 1.0;
+    private Color newColor = new Color(255,255,155);
 
     public static void main(String[] args) {
         // write your code here
