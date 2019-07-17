@@ -8,21 +8,23 @@ import java.util.List;
 
 
 public class CreateDB {
+	public static String driver = "com.mysql.cj.jdbc.Driver";
+	//javatest is the database what I created in MySQL by MySQL Workbench
+	public static String protocol = "jdbc:mysql://localhost:3306/javauser";
+	public static String USER = "root"; //DB username
+	public static String PASS = ""; // DB password
+
+	public static Connection conn = null;
 
 	public static void main(String[] args) {
 
 		//String driver = "org.apache.derby.jdbc.EmbeddedDriver";
 		//String protocol = "jdbc:derby:";
 
-		String driver = "com.mysql.cj.jdbc.Driver";
-		//javatest is the database what I created in MySQL by MySQL Workbench
-		String protocol = "jdbc:mysql://localhost:3306/javauser";
 
 
-		String USER = "root"; //DB username
-		String PASS = ""; // DB password
 
-		Connection conn = null;
+
 
 		// First load the embedded driver
 		try
@@ -61,30 +63,30 @@ public class CreateDB {
 			Statement s = conn.createStatement();
 
 
-			// Create a table named "names" with three fields.
-			// One is for author, which holds a string up to 50 characters.
-			// author_id is a numeric ID number for each author.
-			// url is a varchar, which is a String that holds 80 characters
-//			s.execute("CREATE TABLE names" +
-//					"(author varchar(50), author_id int, url varchar(80))");
-//			System.out.println("Created 'names' table.");
-//
-//			// Add some sample data.  Would be more efficient to use prepareStatement
-//			// but leave off for simplicity
-//			System.out.println("Inserting authors.");
-//			s.execute("INSERT INTO names " +
-//					"VALUES ('Adams, Douglas', 1, 'http://www.douglasadams.com')");
-//			s.execute("INSERT INTO names " +
-//					"VALUES ('Simmons, Dan', 2, 'http://www.dansimmons.com')");
-//			s.execute("INSERT INTO names " +
-//					"VALUES ('Stephenson, Neal', 3, 'http://www.nealstephenson.com')");
-//
-//			System.out.println("Authors inserted.");
+//			 Create a table named "names" with three fields.
+//			 One is for author, which holds a string up to 50 characters.
+//			 author_id is a numeric ID number for each author.
+//			 url is a varchar, which is a String that holds 80 characters
+		/*	s.execute("CREATE TABLE names" +
+					"(author varchar(50), author_id int, url varchar(80))");
+			System.out.println("Created 'names' table.");
+*/
+			// Add some sample data.  Would be more efficient to use prepareStatement
+			// but leave off for simplicity
+		/*	System.out.println("Inserting authors.");
+			s.execute("INSERT INTO names " +
+					"VALUES ('Adams, Douglas', 1, 'http://www.douglasadams.com')");
+			s.execute("INSERT INTO names " +
+					"VALUES ('Simmons, Dan', 2, 'http://www.dansimmons.com')");
+			s.execute("INSERT INTO names " +
+					"VALUES ('Stephenson, Neal', 3, 'http://www.nealstephenson.com')");
 
-			String strSelect = "Select * from names";
+			System.out.println("Authors inserted.");*/
+		//	String strSelect = "Select * from names";
 			//List<String> myRsult = new ArrayList<String>();
-			s.execute(strSelect);
-
+		//	s.execute(strSelect);
+			MyWindows gui = new MyWindows();
+			gui.setVisible(true);
 			conn.close();
 		}
 		catch (SQLException err)
