@@ -51,8 +51,6 @@ public class LibForm extends javax.swing.JFrame {
         tbl_showuser = new javax.swing.JTable();
         btn_showuser = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txt_bookid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txt_title = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -77,6 +75,9 @@ public class LibForm extends javax.swing.JFrame {
         txt_age = new javax.swing.JTextField();
         btn_adduser = new javax.swing.JButton();
         btn_removeuser = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txt_userid = new javax.swing.JTextField();
+        btn_back = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,16 +94,19 @@ public class LibForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        tbl_showbook.setForeground(new java.awt.Color(0, 153, 153));
         tbl_showbook.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Book ID", "Title", "Subject", "ISBN"
+                "Title", "Subject", "Rack No", "ISBN", "Publisher", "Barcode", "UserID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -111,6 +115,8 @@ public class LibForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_showbook);
 
+        btn_display.setBackground(new java.awt.Color(0, 153, 153));
+        btn_display.setForeground(new java.awt.Color(255, 255, 255));
         btn_display.setText("DISPLAY BOOKS");
         btn_display.setToolTipText("");
         btn_display.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +125,7 @@ public class LibForm extends javax.swing.JFrame {
             }
         });
 
+        tbl_showuser.setForeground(new java.awt.Color(0, 153, 153));
         tbl_showuser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -154,6 +161,8 @@ public class LibForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btn_showuser.setBackground(new java.awt.Color(0, 153, 153));
+        btn_showuser.setForeground(new java.awt.Color(255, 255, 255));
         btn_showuser.setText("SHOW MEMBER");
         btn_showuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,9 +183,7 @@ public class LibForm extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btn_showuser))
+                            .addComponent(btn_showuser)
                             .addComponent(btn_display))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -192,38 +199,98 @@ public class LibForm extends javax.swing.JFrame {
                 .addComponent(btn_showuser))
         );
 
-        jLabel1.setText("Book Id");
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Title");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Subject");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Rack No");
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ISBN");
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Publisher");
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Barcode");
 
+        btn_search.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        btn_search.setForeground(new java.awt.Color(0, 51, 51));
         btn_search.setText("SEARCH");
+        btn_search.setToolTipText("Search by Ttile");
+        btn_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_searchActionPerformed(evt);
+            }
+        });
 
+        btn_remove.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        btn_remove.setForeground(new java.awt.Color(0, 51, 51));
         btn_remove.setText("REMOVE");
+        btn_remove.setToolTipText("Remove By Title");
+        btn_remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_removeActionPerformed(evt);
+            }
+        });
 
+        btn_edit.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        btn_edit.setForeground(new java.awt.Color(0, 51, 51));
         btn_edit.setText("EDIT");
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
 
+        btn_add.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        btn_add.setForeground(new java.awt.Color(0, 51, 51));
         btn_add.setText("ADD");
+        btn_add.setToolTipText("Add a Book");
         btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addActionPerformed(evt);
             }
         });
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Member Name");
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Family");
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Age");
+
+        btn_adduser.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        btn_adduser.setForeground(new java.awt.Color(0, 51, 51));
+        btn_adduser.setText("ADD");
+        btn_adduser.setToolTipText("Add a Member");
+        btn_adduser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_adduserActionPerformed(evt);
+            }
+        });
+
+        btn_removeuser.setBackground(new java.awt.Color(255, 255, 255));
+        btn_removeuser.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        btn_removeuser.setForeground(new java.awt.Color(0, 51, 51));
+        btn_removeuser.setText("REMOVE");
+        btn_removeuser.setToolTipText("Remove By Name");
+        btn_removeuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_removeuserActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("UserID");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -237,7 +304,6 @@ public class LibForm extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,9 +311,7 @@ public class LibForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_title, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_bookid, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_title, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,21 +320,9 @@ public class LibForm extends javax.swing.JFrame {
                                     .addComponent(txt_barcode, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_subject, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(20, Short.MAX_VALUE))))
+                                .addContainerGap(42, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btn_search))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -280,17 +332,33 @@ public class LibForm extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_name)
                                     .addComponent(txt_family)
-                                    .addComponent(txt_age, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))))
+                                    .addComponent(txt_age, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btn_adduser, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_removeuser)
+                                .addGap(8, 8, 8)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_userid, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_bookid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -307,14 +375,18 @@ public class LibForm extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txt_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_publisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_barcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(txt_barcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(txt_userid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_edit)
                     .addComponent(btn_add))
@@ -322,7 +394,7 @@ public class LibForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_search)
                     .addComponent(btn_remove))
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -334,20 +406,18 @@ public class LibForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_removeuser)
+                    .addComponent(btn_adduser))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        btn_adduser.setText("ADD");
-        btn_adduser.addActionListener(new java.awt.event.ActionListener() {
+        btn_back.setForeground(new java.awt.Color(0, 153, 153));
+        btn_back.setText("BACK");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduserActionPerformed(evt);
-            }
-        });
-
-        btn_removeuser.setText("REMOVE BY NAME");
-        btn_removeuser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_removeuserActionPerformed(evt);
+                btn_backActionPerformed(evt);
             }
         });
 
@@ -358,26 +428,25 @@ public class LibForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_adduser)
-                        .addGap(34, 34, 34)
-                        .addComponent(btn_removeuser)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_back)
+                        .addGap(23, 23, 23))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_adduser)
-                            .addComponent(btn_removeuser)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_back)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -390,14 +459,18 @@ public class LibForm extends javax.swing.JFrame {
                 String url="jdbc:mysql://localhost:3306/javalibrary?user=root";
                 Connection connect=DriverManager.getConnection(url);
                 Statement state=connect.createStatement();
-                String query="insert into book(subject) values('%s')";
-                query=String.format(query, txt_subject.getText());
+                String query="insert into book(title,subject,rackNo,ISBN,publisher,bookBarCode,userid) values('%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+                query=String.format(query, txt_title.getText(), txt_subject.getText(), txt_rackno.getText(), txt_isbn.getText(), txt_publisher.getText(), txt_barcode.getText(), txt_userid.getText());
                 state.execute(query);
                 state.close();
                 connect.close();
-                txt_bookid.setText("");
+                txt_rackno.setText("");
                 txt_title.setText("");
                 txt_subject.setText("");
+                txt_isbn.setText("");
+                txt_publisher.setText("");
+                txt_barcode.setText("");
+                txt_userid.setText("");
                 showTableData();
                 
             }
@@ -457,6 +530,102 @@ public class LibForm extends javax.swing.JFrame {
         showTableData();        // TODO add your handling code here:
     }//GEN-LAST:event_btn_displayActionPerformed
 
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        // TODO add your handling code here:
+        try{
+                Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+                String url="jdbc:mysql://localhost:3306/javalibrary?user=root";
+                Connection connect=DriverManager.getConnection(url);
+                Statement state=connect.createStatement();
+                String query="update book set title='%s', subject='%s',rackNo='%s',ISBN='%s',publisher='%s',bookBarcode='%s',userid='%s' where title='%s'";
+                query=String.format(query, txt_title.getText(),txt_subject.getText(),txt_rackno.getText(),txt_isbn.getText(),txt_publisher.getText(),txt_barcode.getText(),txt_userid.getText(),txt_title.getText());
+                state.execute(query);
+                state.close();
+                connect.close();
+                txt_rackno.setText("");
+                txt_title.setText("");
+                txt_subject.setText("");
+                txt_isbn.setText("");
+                txt_publisher.setText("");
+                txt_barcode.setText("");
+                txt_userid.setText("");
+                showTableData();
+            }     
+            catch(IllegalAccessException | InstantiationException | ClassNotFoundException | SQLException e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
+        // TODO add your handling code here:
+        try{
+                Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+                String url="jdbc:mysql://localhost:3306/javalibrary?user=root";
+                Connection connect=DriverManager.getConnection(url);
+                Statement state=connect.createStatement();
+                String query="select * from book where title='%s'";
+                query=String.format(query, txt_title.getText());
+                state.execute(query);
+                
+                ResultSet result=state.executeQuery(query);
+                ClearBookTable();
+                    while(result.next()){
+                        
+                        String title=result.getString(2);
+                        String subject=result.getString(3);
+                        String rackNo=result.getString(4);
+                        String isbn=result.getString(5);
+                        String publisher=result.getString(6);
+                        String barcode=result.getString(7);
+                        String userid=result.getString(8);
+                        Object[] content={title,subject,rackNo,isbn,publisher,barcode,userid};
+                        DefaultTableModel model= (DefaultTableModel) tbl_showbook.getModel();
+                        model.addRow(content);
+                    }
+                    
+                state.close();
+                connect.close();
+                txt_rackno.setText("");
+                txt_title.setText("");
+                txt_subject.setText("");
+                txt_isbn.setText("");
+                txt_publisher.setText("");
+                txt_barcode.setText("");
+                //showTableData();
+                
+            }     
+            catch(IllegalAccessException | InstantiationException | ClassNotFoundException | SQLException e){
+                e.printStackTrace();
+            }
+        
+    }//GEN-LAST:event_btn_searchActionPerformed
+
+    private void btn_removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removeActionPerformed
+        // TODO add your handling code here:
+        try{
+                Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+                String url="jdbc:mysql://localhost:3306/javalibrary?user=root";
+                Connection connect=DriverManager.getConnection(url);
+                Statement state=connect.createStatement();
+                String query="delete from book where title='%s'";
+                query=String.format(query, txt_title.getText());
+                state.execute(query);
+                state.close();
+                connect.close();
+                txt_title.setText("");
+                showTableData();
+            }
+            catch(IllegalAccessException | InstantiationException | ClassNotFoundException | SQLException e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_btn_removeActionPerformed
+
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new LoginForm().setVisible(true);
+    }//GEN-LAST:event_btn_backActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -496,14 +665,15 @@ public class LibForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_adduser;
+    private javax.swing.JButton btn_back;
     private javax.swing.JButton btn_display;
     private javax.swing.JButton btn_edit;
     private javax.swing.JButton btn_remove;
     private javax.swing.JButton btn_removeuser;
     private javax.swing.JButton btn_search;
     private javax.swing.JButton btn_showuser;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -523,7 +693,6 @@ public class LibForm extends javax.swing.JFrame {
     private javax.swing.JTable tbl_showuser;
     private javax.swing.JTextField txt_age;
     private javax.swing.JTextField txt_barcode;
-    private javax.swing.JTextField txt_bookid;
     private javax.swing.JTextField txt_family;
     private javax.swing.JTextField txt_isbn;
     private javax.swing.JTextField txt_name;
@@ -531,6 +700,7 @@ public class LibForm extends javax.swing.JFrame {
     private javax.swing.JTextField txt_rackno;
     private javax.swing.JTextField txt_subject;
     private javax.swing.JTextField txt_title;
+    private javax.swing.JTextField txt_userid;
     // End of variables declaration//GEN-END:variables
 
     private void showTableData() {
@@ -543,10 +713,15 @@ public class LibForm extends javax.swing.JFrame {
                 ResultSet result=state.executeQuery(query);
                 ClearBookTable();
                     while(result.next()){
-                        String name=result.getString(1);
-                        String family=result.getString(2);
-                        String age=result.getString(3);
-                        Object[] content={name,family,age};
+                        
+                        String title=result.getString(2);
+                        String subject=result.getString(3);
+                        String rackNo=result.getString(4);
+                        String isbn=result.getString(5);
+                        String publisher=result.getString(6);
+                        String barcode=result.getString(7);
+                        String userid=result.getString(8);
+                        Object[] content={title,subject,rackNo,isbn,publisher,barcode,userid};
                         DefaultTableModel model= (DefaultTableModel) tbl_showbook.getModel();
                         model.addRow(content);
                     }
