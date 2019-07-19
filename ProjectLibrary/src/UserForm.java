@@ -332,6 +332,9 @@ public class UserForm extends javax.swing.JFrame {
                 String query="update book set userid='%s' where bookBarcode='%s'";
                 query=String.format(query, txt_userid.getText(),txt_barcode.getText());
                 state.execute(query);
+                String query1="update user set creationDate = curdate() where bookBarcode='%s'";
+                query1=String.format(query, txt_barcode.getText());
+                state.execute(query1);
                 state.close();
                 connect.close();
               

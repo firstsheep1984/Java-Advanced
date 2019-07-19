@@ -1,0 +1,328 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package mysql;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.BorderFactory;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.table.DefaultTableModel;
+
+public class Form extends JFrame {
+    private JButton btn_canle;
+    private JButton btn_canle_upd;
+    private JButton btn_cnl_delete;
+    private JButton btn_delete;
+    private JButton btn_ins;
+    private JButton btn_show_data;
+    private JButton btn_upd;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JLabel jLabel4;
+    private JLabel jLabel5;
+    private JLabel jLabel6;
+    private JLabel jLabel7;
+    private JPanel jPanel1;
+    private JPanel jPanel2;
+    private JPanel jPanel3;
+    private JPanel jPanel4;
+    private JScrollPane jScrollPane1;
+    private JTable tbl_show;
+    private JTextField txt_age_ins;
+    private JTextField txt_age_upd;
+    private JTextField txt_delete_name;
+    private JTextField txt_family_ins;
+    private JTextField txt_family_upd;
+    private JTextField txt_name_ins;
+    private JTextField txt_name_upd;
+
+    public Form() {
+        this.initComponents();
+    }
+
+    private void initComponents() {
+        this.jPanel1 = new JPanel();
+        this.jLabel1 = new JLabel();
+        this.jLabel2 = new JLabel();
+        this.jLabel3 = new JLabel();
+        this.txt_name_ins = new JTextField();
+        this.txt_family_ins = new JTextField();
+        this.txt_age_ins = new JTextField();
+        this.btn_ins = new JButton();
+        this.btn_canle = new JButton();
+        this.jPanel2 = new JPanel();
+        this.jScrollPane1 = new JScrollPane();
+        this.tbl_show = new JTable();
+        this.btn_show_data = new JButton();
+        this.jPanel3 = new JPanel();
+        this.jLabel4 = new JLabel();
+        this.jLabel5 = new JLabel();
+        this.jLabel6 = new JLabel();
+        this.txt_name_upd = new JTextField();
+        this.txt_family_upd = new JTextField();
+        this.txt_age_upd = new JTextField();
+        this.btn_upd = new JButton();
+        this.btn_canle_upd = new JButton();
+        this.jPanel4 = new JPanel();
+        this.btn_delete = new JButton();
+        this.btn_cnl_delete = new JButton();
+        this.txt_delete_name = new JTextField();
+        this.jLabel7 = new JLabel();
+        this.setDefaultCloseOperation(3);
+        this.jPanel1.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        this.jLabel1.setText("First Name");
+        this.jLabel2.setText("Last Name");
+        this.jLabel3.setText("Age");
+        this.btn_ins.setText("Insert");
+        this.btn_ins.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_insActionPerformed(evt);
+            }
+        });
+        this.btn_canle.setText("Cancel");
+        this.btn_canle.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_canleActionPerformed(evt);
+            }
+        });
+        GroupLayout jPanel1Layout = new GroupLayout(this.jPanel1);
+        this.jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup().addContainerGap(-1, 32767).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup().addComponent(this.btn_ins, -2, 101, -2).addGap(12, 12, 12).addComponent(this.btn_canle, -2, 101, -2)).addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(this.jLabel1).addGroup(jPanel1Layout.createSequentialGroup().addGap(2, 2, 2).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(this.jLabel2).addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup().addComponent(this.jLabel3).addGap(42, 42, 42))))).addGap(39, 39, 39).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(this.txt_name_ins, Alignment.TRAILING, -2, 135, -2).addComponent(this.txt_age_ins, Alignment.TRAILING, -2, 135, -2).addComponent(this.txt_family_ins, Alignment.TRAILING, -2, 135, -2)))).addContainerGap()));
+        jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup().addGap(5, 5, 5).addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel1).addComponent(this.txt_name_ins, -2, -1, -2)).addGap(13, 13, 13).addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel2).addComponent(this.txt_family_ins, -2, -1, -2)).addGap(18, 18, 18).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(this.txt_age_ins, -2, -1, -2).addComponent(this.jLabel3)).addPreferredGap(ComponentPlacement.UNRELATED).addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.btn_canle).addComponent(this.btn_ins)).addContainerGap(-1, 32767)));
+        this.jPanel2.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        this.tbl_show.setModel(new DefaultTableModel(new Object[0][], new String[]{"Name", "Family", "Age"}) {
+            boolean[] canEdit = new boolean[]{false, false, false};
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return this.canEdit[columnIndex];
+            }
+        });
+        this.jScrollPane1.setViewportView(this.tbl_show);
+        this.btn_show_data.setText("D I S P L A Y");
+        this.btn_show_data.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_show_dataActionPerformed(evt);
+            }
+        });
+        GroupLayout jPanel2Layout = new GroupLayout(this.jPanel2);
+        this.jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addComponent(this.btn_show_data, -1, -1, 32767).addGroup(jPanel2Layout.createSequentialGroup().addComponent(this.jScrollPane1, -2, 424, -2).addGap(0, 0, 32767))).addContainerGap()));
+        jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(this.jScrollPane1, -2, 393, -2).addGap(7, 7, 7).addComponent(this.btn_show_data).addGap(0, 27, 32767)));
+        this.jPanel3.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        this.jLabel4.setText("First Name");
+        this.jLabel5.setText("Last Name");
+        this.jLabel6.setText("Age");
+        this.btn_upd.setText("Update");
+        this.btn_upd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_updActionPerformed(evt);
+            }
+        });
+        this.btn_canle_upd.setText("Cancel");
+        this.btn_canle_upd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_canle_updActionPerformed(evt);
+            }
+        });
+        GroupLayout jPanel3Layout = new GroupLayout(this.jPanel3);
+        this.jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING, jPanel3Layout.createSequentialGroup().addGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel3Layout.createSequentialGroup().addGap(0, 0, 32767).addGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel3Layout.createSequentialGroup().addComponent(this.jLabel4).addGap(31, 31, 31).addComponent(this.txt_name_upd, -2, 135, -2)).addGroup(Alignment.TRAILING, jPanel3Layout.createSequentialGroup().addGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING).addComponent(this.jLabel6).addComponent(this.jLabel5)).addGap(18, 18, 18).addComponent(this.txt_family_upd, -2, 135, -2)))).addGroup(jPanel3Layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.btn_upd, -2, 109, -2).addPreferredGap(ComponentPlacement.RELATED).addGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING).addComponent(this.btn_canle_upd, -2, 101, -2).addComponent(this.txt_age_upd, -2, 135, -2)))).addContainerGap()));
+        jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel3Layout.createSequentialGroup().addContainerGap().addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel4).addComponent(this.txt_name_upd, -2, -1, -2)).addPreferredGap(ComponentPlacement.RELATED).addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.txt_family_upd, -2, -1, -2).addComponent(this.jLabel5)).addPreferredGap(ComponentPlacement.RELATED).addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.txt_age_upd, -2, -1, -2).addComponent(this.jLabel6)).addPreferredGap(ComponentPlacement.RELATED).addGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING).addComponent(this.btn_upd).addComponent(this.btn_canle_upd)).addContainerGap(-1, 32767)));
+        this.jPanel4.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        this.btn_delete.setText("Delete");
+        this.btn_delete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_deleteActionPerformed(evt);
+            }
+        });
+        this.btn_cnl_delete.setText("Cancel");
+        this.btn_cnl_delete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Form.this.btn_cnl_deleteActionPerformed(evt);
+            }
+        });
+        this.jLabel7.setText("Last Name");
+        this.jLabel7.setToolTipText("");
+        GroupLayout jPanel4Layout = new GroupLayout(this.jPanel4);
+        this.jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel4Layout.createSequentialGroup().addGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel4Layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.jLabel7).addPreferredGap(ComponentPlacement.UNRELATED).addComponent(this.txt_delete_name, -2, 164, -2)).addGroup(jPanel4Layout.createSequentialGroup().addGap(0, 5, 32767).addComponent(this.btn_delete, -2, 110, -2).addGap(18, 18, 18).addComponent(this.btn_cnl_delete).addGap(37, 37, 37))).addContainerGap()));
+        jPanel4Layout.setVerticalGroup(jPanel4Layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING, jPanel4Layout.createSequentialGroup().addContainerGap().addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.txt_delete_name, -2, -1, -2).addComponent(this.jLabel7)).addPreferredGap(ComponentPlacement.RELATED).addGroup(jPanel4Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.btn_cnl_delete).addComponent(this.btn_delete)).addContainerGap(15, 32767)));
+        GroupLayout layout = new GroupLayout(this.getContentPane());
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING, layout.createSequentialGroup().addComponent(this.jPanel2, -1, -1, 32767).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.LEADING, false).addComponent(this.jPanel3, -1, -1, 32767).addComponent(this.jPanel1, -1, -1, 32767).addComponent(this.jPanel4, -2, -1, -2)).addGap(1, 1, 1)));
+        layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jPanel1, -2, -1, -2).addGap(1, 1, 1).addComponent(this.jPanel3, -2, -1, -2).addGap(1, 1, 1).addComponent(this.jPanel4, -2, -1, -2)).addComponent(this.jPanel2, -2, -1, -2)).addContainerGap(-1, 32767)));
+        this.pack();
+    }
+
+    public void ClearTable() {
+        DefaultTableModel dm = (DefaultTableModel)this.tbl_show.getModel();
+        int rowCount = dm.getRowCount();
+
+        for(int i = rowCount - 1; i >= 0; --i) {
+            dm.removeRow(i);
+        }
+
+    }
+
+    public void showTableData() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/mytestdb3?user=root1";
+            Connection connect = DriverManager.getConnection(url);
+            Statement state = connect.createStatement();
+            String query = "select * from user";
+            ResultSet result = state.executeQuery(query);
+            this.ClearTable();
+
+            while(result.next()) {
+                String name = result.getString(1);
+                String family = result.getString(2);
+                String age = result.getString(3);
+                Object[] content = new Object[]{name, family, age};
+                DefaultTableModel model = (DefaultTableModel)this.tbl_show.getModel();
+                model.addRow(content);
+            }
+
+            state.close();
+            connect.close();
+        } catch (InstantiationException | ClassNotFoundException | SQLException | IllegalAccessException var11) {
+            var11.printStackTrace();
+        }
+
+    }
+
+    private void btn_canleActionPerformed(ActionEvent evt) {
+        this.txt_name_ins.setText("");
+        this.txt_family_ins.setText("");
+        this.txt_age_ins.setText("");
+    }
+
+    private void btn_insActionPerformed(ActionEvent evt) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/mytestdb3?user=root1";
+            Connection connect = DriverManager.getConnection(url);
+            Statement state = connect.createStatement();
+            String query = "insert into user(name,family,age) values('%s','%s',%s)";
+            query = String.format(query, this.txt_name_ins.getText(), this.txt_family_ins.getText(), this.txt_age_ins.getText());
+            state.execute(query);
+            state.close();
+            connect.close();
+            this.txt_name_ins.setText("");
+            this.txt_family_ins.setText("");
+            this.txt_age_ins.setText("");
+            this.showTableData();
+        } catch (InstantiationException | ClassNotFoundException | SQLException | IllegalAccessException var6) {
+            var6.printStackTrace();
+        }
+
+    }
+
+    private void btn_show_dataActionPerformed(ActionEvent evt) {
+        this.showTableData();
+    }
+
+    private void btn_updActionPerformed(ActionEvent evt) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/mytestdb3?user=root1";
+            Connection connect = DriverManager.getConnection(url);
+            Statement state = connect.createStatement();
+            String query = "update user set name='%s', family='%s',age=%s where name='%s'";
+            query = String.format(query, this.txt_name_upd.getText(), this.txt_family_upd.getText(), this.txt_age_upd.getText(), this.txt_name_upd.getText());
+            state.execute(query);
+            state.close();
+            connect.close();
+            this.txt_name_upd.setText("");
+            this.txt_family_upd.setText("");
+            this.txt_age_upd.setText("");
+            this.showTableData();
+        } catch (InstantiationException | ClassNotFoundException | SQLException | IllegalAccessException var6) {
+            var6.printStackTrace();
+        }
+
+    }
+
+    private void btn_canle_updActionPerformed(ActionEvent evt) {
+        this.txt_name_upd.setText("");
+        this.txt_family_upd.setText("");
+        this.txt_age_upd.setText("");
+    }
+
+    private void btn_cnl_deleteActionPerformed(ActionEvent evt) {
+        this.txt_delete_name.setText("");
+    }
+
+    private void btn_deleteActionPerformed(ActionEvent evt) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/mytestdb3?user=root1";
+            Connection connect = DriverManager.getConnection(url);
+            Statement state = connect.createStatement();
+            String query = "delete from user where name='%s'";
+            query = String.format(query, this.txt_delete_name.getText());
+            state.execute(query);
+            state.close();
+            connect.close();
+            this.txt_delete_name.setText("");
+            this.showTableData();
+        } catch (InstantiationException | ClassNotFoundException | SQLException | IllegalAccessException var6) {
+            var6.printStackTrace();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        try {
+            LookAndFeelInfo[] var1 = UIManager.getInstalledLookAndFeels();
+            int var2 = var1.length;
+
+            for(int var3 = 0; var3 < var2; ++var3) {
+                LookAndFeelInfo info = var1[var3];
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException var5) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, (String)null, var5);
+        } catch (InstantiationException var6) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, (String)null, var6);
+        } catch (IllegalAccessException var7) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, (String)null, var7);
+        } catch (UnsupportedLookAndFeelException var8) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, (String)null, var8);
+        }
+
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new Form()).setVisible(true);
+            }
+        });
+    }
+}

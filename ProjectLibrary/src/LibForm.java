@@ -205,6 +205,12 @@ public class LibForm extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Title");
 
+        txt_title.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_titleActionPerformed(evt);
+            }
+        });
+
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Subject");
 
@@ -625,6 +631,10 @@ public class LibForm extends javax.swing.JFrame {
         this.setVisible(false);
         new LoginForm().setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void txt_titleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_titleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_titleActionPerformed
 
     /**
      * @param args the command line arguments
